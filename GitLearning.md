@@ -54,7 +54,7 @@
 
 ## Git基本工作流程：
 
-### Git工作区域：
+## Git工作区域：
 
 1.	Git Repository（Git仓库）最终确定的文件保存到仓库，成为一个新的版本，并对他人可见
 2.	暂存区 暂存已经修改的文件最后统一提交到Git仓库中
@@ -90,9 +90,9 @@ git config –-global user.email '这里填写自己的用户名邮箱'
 
 3.	向仓库中添加文件
 
-### Git本地仓库操作	
+## Git本地仓库操作	
 
-这里假设在工作区有文件 `HelloWorld.cpp` 或者创建文件 touch HelloWorld.cpp
+这里假设在工作区有文件 `HelloWorld.cpp` 或者创建文件 `touch HelloWorld.cpp`
 
 1. 确定文件是否已在Git仓库中：
 
@@ -145,76 +145,18 @@ rm 删除文件、文件夹
 ## Git远程仓库
 **使用目的**：备份、实现代码共享集中化管理
 
-![git远程仓库](images/git.png)
-
 如何将本地仓库同步到远程仓库中：
 1.	将远程仓库（github对应的项目）复制到本地：
 ```
 git clone 仓库地址
 ```
-
 > 注意：仓库地址在clone or download按钮下取得
 
 2.	进行文件增删改查，并添加到Git仓库中
+
 3.	将本地仓库同步到远程仓库中
 使用命令：`git push`
 
-以下本人进行本地仓库同步的完整代码 （Git为文件夹名；–Git为仓库名）
-
-```
-123@DESKTOP-MHQCGKI MINGW64 ~/Desktop/Git/-Git (master)
-$ git status
-On branch master
-Your branch is up to date with 'origin/master'.
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-        GitLearning.docx
-
-nothing added to commit but untracked files present (use "git add" to track)
-
-123@DESKTOP-MHQCGKI MINGW64 ~/Desktop/Git/-Git (master)
-$ git add GitLearning.docx
-
-123@DESKTOP-MHQCGKI MINGW64 ~/Desktop/Git/-Git (master)
-$ git status
-On branch master
-Your branch is up to date with 'origin/master'.
-
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
-
-        new file:   GitLearning.docx
-
-
-123@DESKTOP-MHQCGKI MINGW64 ~/Desktop/Git/-Git (master)
-$ git commit -m 'vision 1.0'
-[master cf5a4e1] vision 1.0
- 1 file changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 GitLearning.docx
-
-123@DESKTOP-MHQCGKI MINGW64 ~/Desktop/Git/-Git (master)
-$ git status
-On branch master
-Your branch is ahead of 'origin/master' by 1 commit.
-  (use "git push" to publish your local commits)
-
-nothing to commit, working tree clean
-
-123@DESKTOP-MHQCGKI MINGW64 ~/Desktop/Git/-Git (master)
-$ git push
-Logon failed, use ctrl+c to cancel basic credential prompt.
-Username for 'https://github.com': yezhaodan
-Counting objects: 3, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (3/3), done.
-Writing objects: 100% (3/3), 133.91 KiB | 11.16 MiB/s, done.
-Total 3 (delta 0), reused 0 (delta 0)
-To https://github.com/yezhaodan/-Git.git
-   aa5e68c..cf5a4e1  master -> master
-
-```
 
 > 如果`git push`出现`The requested URL returned error：403 Forbidden while accessing`问题如何解决：
 
